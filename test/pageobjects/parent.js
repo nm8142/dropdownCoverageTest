@@ -32,6 +32,10 @@ export default class Parent {
         
     }
     get recentCasesArrow () {
+        return $('span[class="fui-NavCategoryItem__expandIcon ___1ynx4oh f1lfeew"] > svg');
+
+    }
+    get selectedRecentCasesArrow () {
         return $('span[class="fui-NavCategoryItem__expandIcon ___5ni9qk0 f1lfeew f93bgaf"] > svg');
     }
     get recentCaseHighlightColor () {
@@ -55,5 +59,8 @@ export default class Parent {
     // FUNCTIONS
     open (path) {
         return browser.url(`https://app.thecasework.com/${path}`)
+    }
+    selectRecentCasesArrow () {
+        this.recentCasesArrow.click();
     }
 }

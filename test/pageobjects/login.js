@@ -11,15 +11,10 @@ class Login extends Parent {
     }
     // FUNCTIONS
     login = (username, password) => {
-        this.usernameField.setValue(username);
-        this.passwordField.setValue(password);
+        this.usernameField.setValue(username, { mask: true});
+        this.passwordField.setValue(password, { mask: true });
         this.loginButton.click();
     }
-    // This is the home page
-    open () {
-        return super.open('');
-    }
-
 }
 
 export default Login();
