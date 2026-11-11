@@ -1,5 +1,5 @@
-import { $ } from '@wdio/globals'
-import { browser } from '@wdio/globals'
+import { $ } from '@wdio/globals';
+import { browser } from '@wdio/globals';
 
 export default class Parent {
     // GETTERS
@@ -38,10 +38,11 @@ export default class Parent {
     get selectedRecentCasesArrow () {
         return $('span[class="fui-NavCategoryItem__expandIcon ___5ni9qk0 f1lfeew f93bgaf"] > svg');
     }
-    get recentCaseHighlightColor () {
-        return $('.f8w4g0q');
-    }
-     get recentCase1 () {
+    // MIGHT GO UNUSED
+    // get recentCaseHighlightColor () {
+    //     return $('.f11ht4ay:focus');
+    // }
+    get recentCase1 () {
         return $('button:first-child[data-testid*="vert-nav-recent-case-"]');
     }
     get recentCase2 () {
@@ -63,4 +64,7 @@ export default class Parent {
     selectRecentCasesArrow () {
         this.recentCasesArrow.click();
     }
+    // VARIABLES
+    // i = 0;
+    // recentCases = [this.recentCase1, this.recentCase2, this.recentCase3, this.recentCase4, this.recentCase5];
 }

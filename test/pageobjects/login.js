@@ -1,3 +1,5 @@
+import Parent from './parent.js';
+
 class Login extends Parent {
     // GETTERS
     get usernameField () {
@@ -10,11 +12,11 @@ class Login extends Parent {
         return $('button[data-testid="login-submit"]');
     }
     // FUNCTIONS
-    login = (username, password) => {
-        this.usernameField.setValue(username, { mask: true});
-        this.passwordField.setValue(password, { mask: true });
-        this.loginButton.click();
+    async login (username, password) {
+        await this.usernameField.setValue(username, { mask: true});
+        await this.passwordField.setValue(password, { mask: true });
+        await this.loginButton.click();
     }
 }
 
-export default Login();
+export default new Login();

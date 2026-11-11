@@ -1,3 +1,5 @@
+import Parent from './parent.js';
+
 class Cases extends Parent {
 // GETTERS
 get moreButton () {
@@ -41,10 +43,7 @@ addNewCase (caseName) {
     this.retainedByDropdown.click();
     this.retainedByFirstOption.click();
     this.confirmNewCaseButton.click();
-}
-addHover (selector) {
-    
-}
+    }
 }
 
 export default new Cases();
