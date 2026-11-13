@@ -8,7 +8,7 @@ get moreButton () {
 get deleteCaseButton () {
     return $('div[data-testid="view-edit-case-delete-menu-item"]');
 }
-get confirmDeleteButton () {
+get confirmDeleteCaseButton () {
     return $('button[data-testid="confirmation-dialog-confirm-button"]');
 }
 get caseNameField () {
@@ -43,6 +43,12 @@ addNewCase (caseName) {
     this.retainedByDropdown.click();
     this.retainedByFirstOption.click();
     this.confirmNewCaseButton.click();
+    }
+deleteFinalRecentCase () {
+    this.finalRecentCase.click();
+    this.moreButton.click();
+    this.deleteCaseButton.click();
+    this.confirmDeleteCaseButton.click();
     }
 }
 

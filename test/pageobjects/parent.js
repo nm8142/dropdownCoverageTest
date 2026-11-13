@@ -32,13 +32,12 @@ export default class Parent {
         
     }
     get recentCasesArrow () {
-        return $('span[class="fui-NavCategoryItem__expandIcon ___1ynx4oh f1lfeew"] > svg');
+        return $('span[class="fui-NavCategoryItem__expandIcon ___1ynx4oh f1lfeew"]');
 
     }
     get selectedRecentCasesArrow () {
-        return $('span[class="fui-NavCategoryItem__expandIcon ___5ni9qk0 f1lfeew f93bgaf"] > svg');
+        return $('span[class="fui-NavCategoryItem__expandIcon ___5ni9qk0 f1lfeew f93bgaf"]');
     }
-    // MIGHT GO UNUSED
     // get recentCaseHighlightColor () {
     //     return $('.f11ht4ay:focus');
     // }
@@ -57,6 +56,21 @@ export default class Parent {
     get recentCase5 () {
         return $('button:last-child[data-testid*="vert-nav-recent-case-"]');
     }
+    get recentCases () {
+        return [ 
+            this.recentCase1,
+            this.recentCase2,
+            this.recentCase3,
+            this.recentCase4,
+            this.recentCase5
+        ];
+    }
+    get finalRecentCase () {
+        return this.recentCases[this.recentCases.length - 1];
+    }
+    get caseCreatedPopupTitle () {
+        return $('div[id="toast-titler1sh"]');
+    }
     // FUNCTIONS
     open (path) {
         return browser.url(`https://app.thecasework.com/${path}`)
@@ -64,7 +78,10 @@ export default class Parent {
     selectRecentCasesArrow () {
         this.recentCasesArrow.click();
     }
+    switchToOtherAccount () {
+    this.accountsDropdown.click();
+    this.switchAccount.click();
+    }
     // VARIABLES
-    // i = 0;
-    // recentCases = [this.recentCase1, this.recentCase2, this.recentCase3, this.recentCase4, this.recentCase5];
+    i = 0;
 }
